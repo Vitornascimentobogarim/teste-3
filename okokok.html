@@ -1,23 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Formulário</title>
-    </head>
-    <body>
-        <h1>cadastro</h1>
-        <form id="formulário" method="POST"></form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Menu Genérico</title>
+    <style>
+        /* 1. RESET E ESTILOS GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-        <label>Nome:</label>
-        <input type="text" name="nome" id="nome"><br><br>
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
 
-        <label>Cidade:</Label>
-            <input type="number" name="idade" id="idade"><br><br>
-asd
-            <label>Cidade:</label>
-<input type="text" name="cidade" id="cidade" id="cidade"><br><br>
+        /* 2. MENU LATERAL (SIDEBAR) */
+        .sidebar {
+            width: 260px;
+            background-color: #1a202c; /* Cor escura profissional */
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
 
-<button type="submit">Enviar</button>
-        </form>
-    </body>
-</html>
+        .sidebar-header {
+            padding: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            background-color: #2d3748;
+            border-bottom: 1px solid #4a5568;
+        }
+
+        .nav-item {
+            padding: 15px 25px;
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background-color: #2d3748;
+            color: #fff;
+            border-left: 4px solid #4299e1; /* Linha azul ao passar o rato */
+        }
+
+        /* 3. ÁREA DE CONTEÚDO PRINCIPAL */
+        .main-content {
+            margin-left: 260px; /* Dá espaço para a sidebar fixa */
+            flex: 1;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #2d3748;
+        }
+
+        /* 4. DESIGN DOS ELEMENTOS (Cards, Tabelas e Forms) */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card h3 { color: #718096; font-size: 0.8rem; text-transform: uppercase; }
+        .card p { font-size: 1.6rem; font-weight: bold; margin-top: 10px; }
+
+        table {
+            width: 100%;
+            background: #fff;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #edf2f7; }
+        th { background-color: #edf2f7; color: #4a5568; }
+
+        .btn {
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight:
